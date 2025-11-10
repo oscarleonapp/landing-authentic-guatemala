@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transporte privado confiable del aeropuerto a cualquier destino turístico en Guatemala. Servicio seguro, cómodo y puntual.">
+    <meta name="keywords" content="transporte aeropuerto Guatemala, transfer privado, shuttle Guatemala, transporte turístico">
+    <title>Transporte del Aeropuerto - Authentic Guatemala</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #3f3f46;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #207daf;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #3f3f46;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #207daf;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #207daf;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(32, 125, 175, 0.95), rgba(32, 125, 175, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23207daf" width="1200" height="600"/><path fill="%23ffffff" opacity="0.1" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            padding: 150px 2rem 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #fff;
+            color: #207daf;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background-color: #f0f9ff;
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            margin-left: 1rem;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: #fff;
+            color: #207daf;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 2rem;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #207daf;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(32, 125, 175, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #207daf;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Destinations Section */
+        .destinations {
+            padding: 80px 2rem;
+            background-color: #fff;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .destination-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(32, 125, 175, 0.2);
+        }
+
+        .destination-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #207daf, #2ea3f2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .destination-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+        }
+
+        .destination-content {
+            padding: 1.5rem;
+        }
+
+        .destination-content h3 {
+            color: #207daf;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .destination-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            color: #207daf;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 2rem;
+            background: linear-gradient(135deg, #207daf, #2ea3f2);
+            color: #fff;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact .section-title,
+        .contact .section-subtitle {
+            color: #fff;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #3f3f46;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e4e4e7;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #207daf;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-button {
+            background-color: #207daf;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #186190;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            padding: 80px 2rem;
+            background-color: #f9fafb;
+        }
+
+        .why-us-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-us-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #207daf, #2ea3f2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 10px 30px rgba(32, 125, 175, 0.3);
+        }
+
+        .why-us-list {
+            list-style: none;
+        }
+
+        .why-us-list li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .why-us-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            color: #207daf;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #27272a;
+            color: #fff;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #207daf;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #e4e4e7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #207daf;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #207daf;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #2ea3f2;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #3f3f46;
+            color: #e4e4e7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cta-button.secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .why-us-content {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us-image {
+                height: 300px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #207daf;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 999;
+            border: none;
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            background-color: #186190;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">AUTHENTIC GUATEMALA</a>
+            <nav>
+                <button class="menu-toggle" id="menuToggle">0</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#destinos">Destinos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Transporte Confiable del Aeropuerto</h1>
+            <p>Viaja seguro y cómodo desde el aeropuerto hasta tu destino turístico en Guatemala. Servicio privado disponible 24/7.</p>
+            <div>
+                <a href="#contacto" class="cta-button">Reservar Ahora</a>
+                <a href="#servicios" class="cta-button secondary">Ver Servicios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="servicios">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <p class="section-subtitle">Ofrecemos el mejor servicio de transporte privado con atención personalizada y profesional</p>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">=—</div>
+                    <h3>Vehículos Modernos</h3>
+                    <p>Flota de vehículos nuevos, cómodos y con aire acondicionado para tu máxima comodidad.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">=h</div>
+                    <h3>Conductores Profesionales</h3>
+                    <p>Personal capacitado, bilingüe y con amplio conocimiento de las rutas turísticas.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">=á</div>
+                    <h3>Servicio Seguro</h3>
+                    <p>Tu seguridad es nuestra prioridad. Vehículos asegurados y conductores verificados.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">ð</div>
+                    <h3>Puntualidad Garantizada</h3>
+                    <p>Seguimiento de vuelos en tiempo real para asegurar que estemos ahí cuando llegues.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">=°</div>
+                    <h3>Precios Competitivos</h3>
+                    <p>Tarifas justas y transparentes sin costos ocultos. Paga lo que acordamos.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">=ñ</div>
+                    <h3>Reserva Fácil</h3>
+                    <p>Sistema de reservación sencillo por WhatsApp, email o teléfono.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinos">
+        <div class="container">
+            <h2 class="section-title">Destinos Populares</h2>
+            <p class="section-subtitle">Ofrecemos transporte a los principales destinos turísticos de Guatemala</p>
+
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image"><Û</div>
+                    <div class="destination-content">
+                        <h3>Antigua Guatemala</h3>
+                        <p>Ciudad colonial patrimonio de la humanidad. Viaje de 45 minutos desde el aeropuerto.</p>
+                        <p class="price">Desde $35 USD</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image"><</div>
+                    <div class="destination-content">
+                        <h3>Lago de Atitlán</h3>
+                        <p>Hermoso lago rodeado de volcanes. Transporte directo a Panajachel y otros pueblos.</p>
+                        <p class="price">Desde $75 USD</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image"><Ù</div>
+                    <div class="destination-content">
+                        <h3>Ciudad de Guatemala</h3>
+                        <p>Capital del país. Transporte a hoteles en zona 10, 13, 14 y otras áreas.</p>
+                        <p class="price">Desde $25 USD</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image"><Û</div>
+                    <div class="destination-content">
+                        <h3>Tikal</h3>
+                        <p>Impresionante zona arqueológica Maya. Coordinamos tu vuelo interno y transporte.</p>
+                        <p class="price">Consultar</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image"><Ö</div>
+                    <div class="destination-content">
+                        <h3>Río Dulce</h3>
+                        <p>Paraíso caribeño con selva tropical. Servicio de transporte terrestre completo.</p>
+                        <p class="price">Desde $95 USD</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="destination-image"><Ô</div>
+                    <div class="destination-content">
+                        <h3>Chichicastenango</h3>
+                        <p>Famoso mercado indígena. Tours los jueves y domingos con transporte incluido.</p>
+                        <p class="price">Desde $65 USD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <div class="why-us-content">
+            <div class="why-us-image"><ì<ù</div>
+            <div>
+                <h2 class="section-title" style="text-align: left;">Experiencia Auténtica</h2>
+                <p class="section-subtitle" style="text-align: left; margin-left: 0;">Con Authentic Guatemala no solo obtienes transporte, obtienes una experiencia completa</p>
+                <ul class="why-us-list">
+                    <li>Más de 10 años de experiencia en turismo guatemalteco</li>
+                    <li>Conductores que conocen la historia y cultura local</li>
+                    <li>Recomendaciones personalizadas de restaurantes y lugares</li>
+                    <li>Asistencia durante todo tu viaje en Guatemala</li>
+                    <li>Soporte en español e inglés</li>
+                    <li>Conexión con tours y experiencias auténticas</li>
+                    <li>Atención al cliente disponible 24/7</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="contact-content">
+            <h2 class="section-title">Solicita tu Cotización</h2>
+            <p class="section-subtitle">Completa el formulario y te responderemos en menos de 2 horas</p>
+
+            <div class="contact-form">
+                <div class="success-message" id="successMessage">
+                    ¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Teléfono / WhatsApp *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Número de Pasajeros</label>
+                            <select id="passengers" name="passengers">
+                                <option value="1">1 pasajero</option>
+                                <option value="2">2 pasajeros</option>
+                                <option value="3">3 pasajeros</option>
+                                <option value="4">4 pasajeros</option>
+                                <option value="5">5 pasajeros</option>
+                                <option value="6+">6+ pasajeros</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickup">Punto de Recogida *</label>
+                            <input type="text" id="pickup" name="pickup" placeholder="Ej: Aeropuerto La Aurora" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destino *</label>
+                            <input type="text" id="destination" name="destination" placeholder="Ej: Antigua Guatemala" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Fecha del Viaje</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Hora de Recogida</label>
+                            <input type="time" id="time" name="time">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Información Adicional</label>
+                        <textarea id="message" name="message" placeholder="Cuéntanos sobre equipaje especial, necesidades específicas, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Authentic Guatemala</h3>
+                <p>Transportamos tus sueños a través de la belleza de Guatemala. Experiencias auténticas desde 2013.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">=Ø</a>
+                    <a href="#" aria-label="Instagram">=÷</a>
+                    <a href="#" aria-label="WhatsApp">=¬</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>=Þ +502 1234-5678</p>
+                <p>=ç info@authenticguatemala.com</p>
+                <p>=Í Ciudad de Guatemala</p>
+                <p>ð Disponible 24/7</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <a href="#servicios">Transporte Aeropuerto</a>
+                <a href="#destinos">Tours Privados</a>
+                <a href="#contacto">Shuttle Compartido</a>
+                <a href="#contacto">Alquiler de Vehículos</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Útiles</h3>
+                <a href="https://authenticguatemala.com">Sitio Web Principal</a>
+                <a href="#contacto">Política de Cancelación</a>
+                <a href="#contacto">Términos y Condiciones</a>
+                <a href="#contacto">Preguntas Frecuentes</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Authentic Guatemala. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">‘</button>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Show success message
+            successMessage.classList.add('show');
+
+            // Reset form
+            contactForm.reset();
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+
+            // Here you would typically send the form data to your server
+            // Example:
+            // const formData = new FormData(contactForm);
+            // fetch('/api/contact', { method: 'POST', body: formData })
+            //     .then(response => response.json())
+            //     .then(data => console.log(data));
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Set minimum date for date input to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    </script>
+</body>
+</html>
