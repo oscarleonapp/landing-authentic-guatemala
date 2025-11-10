@@ -335,64 +335,11 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            color: #3f3f46;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .whatsform-iframe {
             width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e4e4e7;
-            border-radius: 8px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #207daf;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .submit-button {
-            background-color: #207daf;
-            color: #fff;
-            padding: 1rem 2rem;
+            min-height: 600px;
             border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s;
-        }
-
-        .submit-button:hover {
-            background-color: #186190;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 8px;
         }
 
         /* Why Choose Us Section */
@@ -569,29 +516,9 @@
                 height: 300px;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
             .footer-content {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            background-color: #10b981;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-            animation: fadeInUp 0.5s ease-out;
         }
 
         /* Scroll to top button */
@@ -792,69 +719,12 @@
             <p class="section-subtitle">Completa el formulario y te responderemos en menos de 2 horas</p>
 
             <div class="contact-form">
-                <div class="success-message" id="successMessage">
-                    ¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.
-                </div>
-
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Nombre Completo *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Teléfono / WhatsApp *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="passengers">Número de Pasajeros</label>
-                            <select id="passengers" name="passengers">
-                                <option value="1">1 pasajero</option>
-                                <option value="2">2 pasajeros</option>
-                                <option value="3">3 pasajeros</option>
-                                <option value="4">4 pasajeros</option>
-                                <option value="5">5 pasajeros</option>
-                                <option value="6+">6+ pasajeros</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="pickup">Punto de Recogida *</label>
-                            <input type="text" id="pickup" name="pickup" placeholder="Ej: Aeropuerto La Aurora" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="destination">Destino *</label>
-                            <input type="text" id="destination" name="destination" placeholder="Ej: Antigua Guatemala" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="date">Fecha del Viaje</label>
-                            <input type="date" id="date" name="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="time">Hora de Recogida</label>
-                            <input type="time" id="time" name="time">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Información Adicional</label>
-                        <textarea id="message" name="message" placeholder="Cuéntanos sobre equipaje especial, necesidades específicas, etc."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-button">Enviar Solicitud</button>
-                </form>
+                <iframe
+                    src="https://whatsform.com/reservadetransporte"
+                    class="whatsform-iframe"
+                    title="Formulario de Reserva de Transporte"
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </section>
@@ -966,32 +836,6 @@
             });
         });
 
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Show success message
-            successMessage.classList.add('show');
-
-            // Reset form
-            contactForm.reset();
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-
-            // Here you would typically send the form data to your server
-            // Example:
-            // const formData = new FormData(contactForm);
-            // fetch('/api/contact', { method: 'POST', body: formData })
-            //     .then(response => response.json())
-            //     .then(data => console.log(data));
-        });
-
         // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
@@ -1010,11 +854,6 @@
             el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
-
-        // Set minimum date for date input to today
-        const dateInput = document.getElementById('date');
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
     </script>
 </body>
 </html>
