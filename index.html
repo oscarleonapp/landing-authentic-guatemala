@@ -74,6 +74,42 @@
             color: #207daf;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .language-btn {
+            background: none;
+            border: 2px solid #e4e4e7;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #666;
+            transition: all 0.3s;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .language-btn:hover {
+            border-color: #207daf;
+            color: #207daf;
+        }
+
+        .language-btn.active {
+            background-color: #207daf;
+            border-color: #207daf;
+            color: #fff;
+        }
+
         .menu-toggle {
             display: none;
             background: none;
@@ -556,26 +592,32 @@
     <header class="header" id="header">
         <div class="nav-container">
             <a href="#" class="logo">AUTHENTIC GUATEMALA</a>
-            <nav>
+            <div class="nav-right">
+                <nav>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
+                        <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+                        <li><a href="#destinos" data-i18n="nav.destinations">Destinos</a></li>
+                        <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button class="language-btn" data-lang="es">ES</button>
+                    <button class="language-btn" data-lang="en">EN</button>
+                </div>
                 <button class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#destinos">Destinos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <h1>Transporte Confiable del Aeropuerto</h1>
-            <p>Viaja seguro y cómodo desde el aeropuerto hasta tu destino turístico en Guatemala. Servicio privado disponible 24/7.</p>
+            <h1 data-i18n="hero.title">Transporte Confiable del Aeropuerto</h1>
+            <p data-i18n="hero.subtitle">Viaja seguro y cómodo desde el aeropuerto hasta tu destino turístico en Guatemala. Servicio privado disponible 24/7.</p>
             <div>
-                <a href="#contacto" class="cta-button">Reservar Ahora</a>
-                <a href="#servicios" class="cta-button secondary">Ver Servicios</a>
+                <a href="#contacto" class="cta-button" data-i18n="hero.cta.primary">Reservar Ahora</a>
+                <a href="#servicios" class="cta-button secondary" data-i18n="hero.cta.secondary">Ver Servicios</a>
             </div>
         </div>
     </section>
@@ -583,39 +625,39 @@
     <!-- Features Section -->
     <section class="features" id="servicios">
         <div class="container">
-            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-            <p class="section-subtitle">Ofrecemos el mejor servicio de transporte privado con atención personalizada y profesional</p>
+            <h2 class="section-title" data-i18n="features.title">¿Por Qué Elegirnos?</h2>
+            <p class="section-subtitle" data-i18n="features.subtitle">Ofrecemos el mejor servicio de transporte privado con atención personalizada y profesional</p>
 
             <div class="features-grid">
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="bi bi-car-front-fill"></i></div>
-                    <h3>Vehículos Modernos</h3>
-                    <p>Flota de vehículos nuevos, cómodos y con aire acondicionado para tu máxima comodidad.</p>
+                    <h3 data-i18n="features.vehicles.title">Vehículos Modernos</h3>
+                    <p data-i18n="features.vehicles.desc">Flota de vehículos nuevos, cómodos y con aire acondicionado para tu máxima comodidad.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="bi bi-person-badge-fill"></i></div>
-                    <h3>Conductores Profesionales</h3>
-                    <p>Personal capacitado, bilingüe y con amplio conocimiento de las rutas turísticas.</p>
+                    <h3 data-i18n="features.drivers.title">Conductores Profesionales</h3>
+                    <p data-i18n="features.drivers.desc">Personal capacitado, bilingüe y con amplio conocimiento de las rutas turísticas.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="bi bi-shield-fill-check"></i></div>
-                    <h3>Servicio Seguro</h3>
-                    <p>Tu seguridad es nuestra prioridad. Vehículos asegurados y conductores verificados.</p>
+                    <h3 data-i18n="features.safety.title">Servicio Seguro</h3>
+                    <p data-i18n="features.safety.desc">Tu seguridad es nuestra prioridad. Vehículos asegurados y conductores verificados.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="bi bi-clock-fill"></i></div>
-                    <h3>Puntualidad Garantizada</h3>
-                    <p>Seguimiento de vuelos en tiempo real para asegurar que estemos ahí cuando llegues.</p>
+                    <h3 data-i18n="features.punctuality.title">Puntualidad Garantizada</h3>
+                    <p data-i18n="features.punctuality.desc">Seguimiento de vuelos en tiempo real para asegurar que estemos ahí cuando llegues.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="bi bi-currency-dollar"></i></div>
-                    <h3>Precios Competitivos</h3>
-                    <p>Tarifas justas y transparentes sin costos ocultos. Paga lo que acordamos.</p>
+                    <h3 data-i18n="features.pricing.title">Precios Competitivos</h3>
+                    <p data-i18n="features.pricing.desc">Tarifas justas y transparentes sin costos ocultos. Paga lo que acordamos.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="bi bi-phone-fill"></i></div>
-                    <h3>Reserva Fácil</h3>
-                    <p>Sistema de reservación sencillo por WhatsApp, email o teléfono.</p>
+                    <h3 data-i18n="features.booking.title">Reserva Fácil</h3>
+                    <p data-i18n="features.booking.desc">Sistema de reservación sencillo por WhatsApp, email o teléfono.</p>
                 </div>
             </div>
         </div>
@@ -624,8 +666,8 @@
     <!-- Destinations Section -->
     <section class="destinations" id="destinos">
         <div class="container">
-            <h2 class="section-title">Destinos Populares</h2>
-            <p class="section-subtitle">Ofrecemos transporte a los principales destinos turísticos de Guatemala</p>
+            <h2 class="section-title" data-i18n="destinations.title">Destinos Populares</h2>
+            <p class="section-subtitle" data-i18n="destinations.subtitle">Ofrecemos transporte a los principales destinos turísticos de Guatemala</p>
 
             <div class="destinations-grid">
                 <div class="destination-card">
@@ -634,8 +676,8 @@
                     </div>
                     <div class="destination-content">
                         <h3>Antigua Guatemala</h3>
-                        <p>Ciudad colonial patrimonio de la humanidad. Viaje de 45 minutos desde el aeropuerto.</p>
-                        <p class="price">Desde $35 USD</p>
+                        <p data-i18n="dest.antigua.desc">Ciudad colonial patrimonio de la humanidad. Viaje de 45 minutos desde el aeropuerto.</p>
+                        <p class="price"><span data-i18n="dest.price.from">Desde</span> $35 USD</p>
                     </div>
                 </div>
                 <div class="destination-card">
@@ -644,8 +686,8 @@
                     </div>
                     <div class="destination-content">
                         <h3>Lago de Atitlán</h3>
-                        <p>Hermoso lago rodeado de volcanes. Transporte directo a Panajachel y otros pueblos.</p>
-                        <p class="price">Desde $75 USD</p>
+                        <p data-i18n="dest.atitlan.desc">Hermoso lago rodeado de volcanes. Transporte directo a Panajachel y otros pueblos.</p>
+                        <p class="price"><span data-i18n="dest.price.from">Desde</span> $75 USD</p>
                     </div>
                 </div>
                 <div class="destination-card">
@@ -654,8 +696,8 @@
                     </div>
                     <div class="destination-content">
                         <h3>Ciudad de Guatemala</h3>
-                        <p>Capital del país. Transporte a hoteles en zona 10, 13, 14 y otras áreas.</p>
-                        <p class="price">Desde $25 USD</p>
+                        <p data-i18n="dest.guatemala.desc">Capital del país. Transporte a hoteles en zona 10, 13, 14 y otras áreas.</p>
+                        <p class="price"><span data-i18n="dest.price.from">Desde</span> $25 USD</p>
                     </div>
                 </div>
                 <div class="destination-card">
@@ -664,8 +706,8 @@
                     </div>
                     <div class="destination-content">
                         <h3>Tikal</h3>
-                        <p>Impresionante zona arqueológica Maya. Coordinamos tu vuelo interno y transporte.</p>
-                        <p class="price">Consultar</p>
+                        <p data-i18n="dest.tikal.desc">Impresionante zona arqueológica Maya. Coordinamos tu vuelo interno y transporte.</p>
+                        <p class="price" data-i18n="dest.price.consult">Consultar</p>
                     </div>
                 </div>
                 <div class="destination-card">
@@ -674,8 +716,8 @@
                     </div>
                     <div class="destination-content">
                         <h3>Río Dulce</h3>
-                        <p>Paraíso caribeño con selva tropical. Servicio de transporte terrestre completo.</p>
-                        <p class="price">Desde $95 USD</p>
+                        <p data-i18n="dest.riodulce.desc">Paraíso caribeño con selva tropical. Servicio de transporte terrestre completo.</p>
+                        <p class="price"><span data-i18n="dest.price.from">Desde</span> $95 USD</p>
                     </div>
                 </div>
                 <div class="destination-card">
@@ -684,8 +726,8 @@
                     </div>
                     <div class="destination-content">
                         <h3>Chichicastenango</h3>
-                        <p>Famoso mercado indígena. Tours los jueves y domingos con transporte incluido.</p>
-                        <p class="price">Desde $65 USD</p>
+                        <p data-i18n="dest.chichi.desc">Famoso mercado indígena. Tours los jueves y domingos con transporte incluido.</p>
+                        <p class="price"><span data-i18n="dest.price.from">Desde</span> $65 USD</p>
                     </div>
                 </div>
             </div>
@@ -697,16 +739,16 @@
         <div class="why-us-content">
             <div class="why-us-image"></div>
             <div>
-                <h2 class="section-title" style="text-align: left;">Experiencia Auténtica</h2>
-                <p class="section-subtitle" style="text-align: left; margin-left: 0;">Con Authentic Guatemala no solo obtienes transporte, obtienes una experiencia completa</p>
+                <h2 class="section-title" style="text-align: left;" data-i18n="whyus.title">Experiencia Auténtica</h2>
+                <p class="section-subtitle" style="text-align: left; margin-left: 0;" data-i18n="whyus.subtitle">Con Authentic Guatemala no solo obtienes transporte, obtienes una experiencia completa</p>
                 <ul class="why-us-list">
-                    <li>Más de 10 años de experiencia en turismo guatemalteco</li>
-                    <li>Conductores que conocen la historia y cultura local</li>
-                    <li>Recomendaciones personalizadas de restaurantes y lugares</li>
-                    <li>Asistencia durante todo tu viaje en Guatemala</li>
-                    <li>Soporte en español e inglés</li>
-                    <li>Conexión con tours y experiencias auténticas</li>
-                    <li>Atención al cliente disponible 24/7</li>
+                    <li data-i18n="whyus.point1">Más de 10 años de experiencia en turismo guatemalteco</li>
+                    <li data-i18n="whyus.point2">Conductores que conocen la historia y cultura local</li>
+                    <li data-i18n="whyus.point3">Recomendaciones personalizadas de restaurantes y lugares</li>
+                    <li data-i18n="whyus.point4">Asistencia durante todo tu viaje en Guatemala</li>
+                    <li data-i18n="whyus.point5">Soporte en español e inglés</li>
+                    <li data-i18n="whyus.point6">Conexión con tours y experiencias auténticas</li>
+                    <li data-i18n="whyus.point7">Atención al cliente disponible 24/7</li>
                 </ul>
             </div>
         </div>
@@ -715,8 +757,8 @@
     <!-- Contact Section -->
     <section class="contact" id="contacto">
         <div class="contact-content">
-            <h2 class="section-title">Solicita tu Cotización</h2>
-            <p class="section-subtitle">Completa el formulario y te responderemos en menos de 2 horas</p>
+            <h2 class="section-title" data-i18n="contact.title">Solicita tu Cotización</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Completa el formulario y te responderemos en menos de 2 horas</p>
 
             <div class="contact-form">
                 <iframe
@@ -734,7 +776,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Authentic Guatemala</h3>
-                <p>Transportamos tus sueños a través de la belleza de Guatemala. Experiencias auténticas desde 2013.</p>
+                <p data-i18n="footer.about.desc">Transportamos tus sueños a través de la belleza de Guatemala. Experiencias auténticas desde 2013.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -743,32 +785,32 @@
             </div>
 
             <div class="footer-section">
-                <h3>Contacto</h3>
+                <h3 data-i18n="footer.contact">Contacto</h3>
                 <p><i class="bi bi-telephone-fill"></i> +502 1234-5678</p>
                 <p><i class="bi bi-envelope-fill"></i> info@authenticguatemala.com</p>
                 <p><i class="bi bi-geo-alt-fill"></i> Ciudad de Guatemala</p>
-                <p><i class="bi bi-clock-fill"></i> Disponible 24/7</p>
+                <p><i class="bi bi-clock-fill"></i> <span data-i18n="footer.available">Disponible 24/7</span></p>
             </div>
 
             <div class="footer-section">
-                <h3>Servicios</h3>
-                <a href="#servicios">Transporte Aeropuerto</a>
-                <a href="#destinos">Tours Privados</a>
-                <a href="#contacto">Shuttle Compartido</a>
-                <a href="#contacto">Alquiler de Vehículos</a>
+                <h3 data-i18n="footer.services">Servicios</h3>
+                <a href="#servicios" data-i18n="footer.service1">Transporte Aeropuerto</a>
+                <a href="#destinos" data-i18n="footer.service2">Tours Privados</a>
+                <a href="#contacto" data-i18n="footer.service3">Shuttle Compartido</a>
+                <a href="#contacto" data-i18n="footer.service4">Alquiler de Vehículos</a>
             </div>
 
             <div class="footer-section">
-                <h3>Enlaces Útiles</h3>
-                <a href="https://authenticguatemala.com">Sitio Web Principal</a>
-                <a href="#contacto">Política de Cancelación</a>
-                <a href="#contacto">Términos y Condiciones</a>
-                <a href="#contacto">Preguntas Frecuentes</a>
+                <h3 data-i18n="footer.links">Enlaces Útiles</h3>
+                <a href="https://authenticguatemala.com" data-i18n="footer.link1">Sitio Web Principal</a>
+                <a href="#contacto" data-i18n="footer.link2">Política de Cancelación</a>
+                <a href="#contacto" data-i18n="footer.link3">Términos y Condiciones</a>
+                <a href="#contacto" data-i18n="footer.link4">Preguntas Frecuentes</a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 Authentic Guatemala. Todos los derechos reservados.</p>
+            <p>&copy; <span data-i18n="footer.copyright">2024 Authentic Guatemala. Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
@@ -776,6 +818,193 @@
     <button class="scroll-top" id="scrollTop"><i class="bi bi-arrow-up"></i></button>
 
     <script>
+        // Internationalization (i18n) System
+        const translations = {
+            es: {
+                'nav.home': 'Inicio',
+                'nav.services': 'Servicios',
+                'nav.destinations': 'Destinos',
+                'nav.contact': 'Contacto',
+                'hero.title': 'Transporte Confiable del Aeropuerto',
+                'hero.subtitle': 'Viaja seguro y cómodo desde el aeropuerto hasta tu destino turístico en Guatemala. Servicio privado disponible 24/7.',
+                'hero.cta.primary': 'Reservar Ahora',
+                'hero.cta.secondary': 'Ver Servicios',
+                'features.title': '¿Por Qué Elegirnos?',
+                'features.subtitle': 'Ofrecemos el mejor servicio de transporte privado con atención personalizada y profesional',
+                'features.vehicles.title': 'Vehículos Modernos',
+                'features.vehicles.desc': 'Flota de vehículos nuevos, cómodos y con aire acondicionado para tu máxima comodidad.',
+                'features.drivers.title': 'Conductores Profesionales',
+                'features.drivers.desc': 'Personal capacitado, bilingüe y con amplio conocimiento de las rutas turísticas.',
+                'features.safety.title': 'Servicio Seguro',
+                'features.safety.desc': 'Tu seguridad es nuestra prioridad. Vehículos asegurados y conductores verificados.',
+                'features.punctuality.title': 'Puntualidad Garantizada',
+                'features.punctuality.desc': 'Seguimiento de vuelos en tiempo real para asegurar que estemos ahí cuando llegues.',
+                'features.pricing.title': 'Precios Competitivos',
+                'features.pricing.desc': 'Tarifas justas y transparentes sin costos ocultos. Paga lo que acordamos.',
+                'features.booking.title': 'Reserva Fácil',
+                'features.booking.desc': 'Sistema de reservación sencillo por WhatsApp, email o teléfono.',
+                'destinations.title': 'Destinos Populares',
+                'destinations.subtitle': 'Ofrecemos transporte a los principales destinos turísticos de Guatemala',
+                'dest.antigua.desc': 'Ciudad colonial patrimonio de la humanidad. Viaje de 45 minutos desde el aeropuerto.',
+                'dest.atitlan.desc': 'Hermoso lago rodeado de volcanes. Transporte directo a Panajachel y otros pueblos.',
+                'dest.guatemala.desc': 'Capital del país. Transporte a hoteles en zona 10, 13, 14 y otras áreas.',
+                'dest.tikal.desc': 'Impresionante zona arqueológica Maya. Coordinamos tu vuelo interno y transporte.',
+                'dest.riodulce.desc': 'Paraíso caribeño con selva tropical. Servicio de transporte terrestre completo.',
+                'dest.chichi.desc': 'Famoso mercado indígena. Tours los jueves y domingos con transporte incluido.',
+                'dest.price.from': 'Desde',
+                'dest.price.consult': 'Consultar',
+                'whyus.title': 'Experiencia Auténtica',
+                'whyus.subtitle': 'Con Authentic Guatemala no solo obtienes transporte, obtienes una experiencia completa',
+                'whyus.point1': 'Más de 10 años de experiencia en turismo guatemalteco',
+                'whyus.point2': 'Conductores que conocen la historia y cultura local',
+                'whyus.point3': 'Recomendaciones personalizadas de restaurantes y lugares',
+                'whyus.point4': 'Asistencia durante todo tu viaje en Guatemala',
+                'whyus.point5': 'Soporte en español e inglés',
+                'whyus.point6': 'Conexión con tours y experiencias auténticas',
+                'whyus.point7': 'Atención al cliente disponible 24/7',
+                'contact.title': 'Solicita tu Cotización',
+                'contact.subtitle': 'Completa el formulario y te responderemos en menos de 2 horas',
+                'footer.about.desc': 'Transportamos tus sueños a través de la belleza de Guatemala. Experiencias auténticas desde 2013.',
+                'footer.contact': 'Contacto',
+                'footer.available': 'Disponible 24/7',
+                'footer.services': 'Servicios',
+                'footer.service1': 'Transporte Aeropuerto',
+                'footer.service2': 'Tours Privados',
+                'footer.service3': 'Shuttle Compartido',
+                'footer.service4': 'Alquiler de Vehículos',
+                'footer.links': 'Enlaces Útiles',
+                'footer.link1': 'Sitio Web Principal',
+                'footer.link2': 'Política de Cancelación',
+                'footer.link3': 'Términos y Condiciones',
+                'footer.link4': 'Preguntas Frecuentes',
+                'footer.copyright': '2024 Authentic Guatemala. Todos los derechos reservados.'
+            },
+            en: {
+                'nav.home': 'Home',
+                'nav.services': 'Services',
+                'nav.destinations': 'Destinations',
+                'nav.contact': 'Contact',
+                'hero.title': 'Reliable Airport Transportation',
+                'hero.subtitle': 'Travel safe and comfortable from the airport to your tourist destination in Guatemala. Private service available 24/7.',
+                'hero.cta.primary': 'Book Now',
+                'hero.cta.secondary': 'View Services',
+                'features.title': 'Why Choose Us?',
+                'features.subtitle': 'We offer the best private transportation service with personalized and professional attention',
+                'features.vehicles.title': 'Modern Vehicles',
+                'features.vehicles.desc': 'Fleet of new, comfortable vehicles with air conditioning for your maximum comfort.',
+                'features.drivers.title': 'Professional Drivers',
+                'features.drivers.desc': 'Trained, bilingual staff with extensive knowledge of tourist routes.',
+                'features.safety.title': 'Safe Service',
+                'features.safety.desc': 'Your safety is our priority. Insured vehicles and verified drivers.',
+                'features.punctuality.title': 'Guaranteed Punctuality',
+                'features.punctuality.desc': 'Real-time flight tracking to ensure we are there when you arrive.',
+                'features.pricing.title': 'Competitive Prices',
+                'features.pricing.desc': 'Fair and transparent rates with no hidden costs. Pay what we agreed.',
+                'features.booking.title': 'Easy Booking',
+                'features.booking.desc': 'Simple reservation system via WhatsApp, email or phone.',
+                'destinations.title': 'Popular Destinations',
+                'destinations.subtitle': 'We offer transportation to the main tourist destinations in Guatemala',
+                'dest.antigua.desc': 'Colonial city, world heritage site. 45-minute trip from the airport.',
+                'dest.atitlan.desc': 'Beautiful lake surrounded by volcanoes. Direct transportation to Panajachel and other towns.',
+                'dest.guatemala.desc': 'Capital of the country. Transportation to hotels in zone 10, 13, 14 and other areas.',
+                'dest.tikal.desc': 'Impressive Mayan archaeological site. We coordinate your internal flight and transportation.',
+                'dest.riodulce.desc': 'Caribbean paradise with tropical jungle. Complete ground transportation service.',
+                'dest.chichi.desc': 'Famous indigenous market. Tours on Thursdays and Sundays with transportation included.',
+                'dest.price.from': 'From',
+                'dest.price.consult': 'Inquire',
+                'whyus.title': 'Authentic Experience',
+                'whyus.subtitle': 'With Authentic Guatemala you don\'t just get transportation, you get a complete experience',
+                'whyus.point1': 'More than 10 years of experience in Guatemalan tourism',
+                'whyus.point2': 'Drivers who know the local history and culture',
+                'whyus.point3': 'Personalized recommendations for restaurants and places',
+                'whyus.point4': 'Assistance throughout your trip in Guatemala',
+                'whyus.point5': 'Support in Spanish and English',
+                'whyus.point6': 'Connection with authentic tours and experiences',
+                'whyus.point7': '24/7 customer service available',
+                'contact.title': 'Request Your Quote',
+                'contact.subtitle': 'Complete the form and we will respond within 2 hours',
+                'footer.about.desc': 'We transport your dreams through the beauty of Guatemala. Authentic experiences since 2013.',
+                'footer.contact': 'Contact',
+                'footer.available': 'Available 24/7',
+                'footer.services': 'Services',
+                'footer.service1': 'Airport Transportation',
+                'footer.service2': 'Private Tours',
+                'footer.service3': 'Shared Shuttle',
+                'footer.service4': 'Car Rental',
+                'footer.links': 'Useful Links',
+                'footer.link1': 'Main Website',
+                'footer.link2': 'Cancellation Policy',
+                'footer.link3': 'Terms and Conditions',
+                'footer.link4': 'FAQ',
+                'footer.copyright': '2024 Authentic Guatemala. All rights reserved.'
+            }
+        };
+
+        // Language switching function
+        function setLanguage(lang) {
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update document title
+            const titles = {
+                es: 'Transporte del Aeropuerto - Authentic Guatemala',
+                en: 'Airport Transportation - Authentic Guatemala'
+            };
+            document.title = titles[lang];
+
+            // Update meta description
+            const descriptions = {
+                es: 'Transporte privado confiable del aeropuerto a cualquier destino turístico en Guatemala. Servicio seguro, cómodo y puntual.',
+                en: 'Reliable private transportation from the airport to any tourist destination in Guatemala. Safe, comfortable and punctual service.'
+            };
+            document.querySelector('meta[name="description"]').content = descriptions[lang];
+
+            // Update all text content
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update form iframe
+            const formUrls = {
+                es: 'https://whatsform.com/reservadetransporte',
+                en: 'https://whatsform.com/bookyourtransfer'
+            };
+            const iframe = document.querySelector('.whatsform-iframe');
+            if (iframe) {
+                iframe.src = formUrls[lang];
+            }
+
+            // Update language buttons
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Detect user's language preference
+        function detectLanguage() {
+            // Check localStorage first
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
+                return savedLang;
+            }
+
+            // Detect from browser
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.toLowerCase().split('-')[0];
+
+            // Default to English for English speakers, Spanish for others (Guatemala audience)
+            return langCode === 'en' ? 'en' : 'es';
+        }
+
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
@@ -853,6 +1082,20 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             el.style.animationPlayState = 'paused';
             observer.observe(el);
+        });
+
+        // Language switcher event listeners
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialLang = detectLanguage();
+            setLanguage(initialLang);
         });
     </script>
 </body>
