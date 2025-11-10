@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Transporte privado confiable del aeropuerto a cualquier destino turístico en Guatemala. Servicio seguro, cómodo y puntual.">
-    <meta name="keywords" content="transporte aeropuerto Guatemala, transfer privado, shuttle Guatemala, transporte turístico">
+    <meta name="description" content="Transporte privado confiable del aeropuerto a cualquier destino turÃ­stico en Guatemala. Servicio seguro, cÃ³modo y puntual.">
+    <meta name="keywords" content="transporte aeropuerto Guatemala, transfer privado, shuttle Guatemala, transporte turÃ­stico">
     <title>Transporte del Aeropuerto - Authentic Guatemala</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         * {
             margin: 0;
@@ -77,15 +78,15 @@
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #207daf;
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(32, 125, 175, 0.95), rgba(32, 125, 175, 0.85)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23207daf" width="1200" height="600"/><path fill="%23ffffff" opacity="0.1" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+            background: linear-gradient(135deg, rgba(32, 125, 175, 0.85), rgba(32, 125, 175, 0.75)),
+                        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -211,8 +212,9 @@
         }
 
         .feature-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            color: #207daf;
         }
 
         .feature-card h3 {
@@ -254,12 +256,12 @@
 
         .destination-image {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #207daf, #2ea3f2);
+            height: 250px;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -271,7 +273,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+            background: linear-gradient(to bottom, rgba(32, 125, 175, 0.3), rgba(32, 125, 175, 0.6));
+            transition: background 0.3s;
+        }
+
+        .destination-card:hover .destination-image::before {
+            background: linear-gradient(to bottom, rgba(32, 125, 175, 0.2), rgba(32, 125, 175, 0.5));
+        }
+
+        .destination-icon {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .destination-content {
@@ -398,12 +413,11 @@
         .why-us-image {
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, #207daf, #2ea3f2);
+            background: linear-gradient(135deg, rgba(32, 125, 175, 0.4), rgba(46, 163, 242, 0.4)),
+                        url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80');
+            background-size: cover;
+            background-position: center;
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
             box-shadow: 0 10px 30px rgba(32, 125, 175, 0.3);
         }
 
@@ -419,7 +433,8 @@
         }
 
         .why-us-list li::before {
-            content: '';
+            content: '\F26B';
+            font-family: 'bootstrap-icons';
             position: absolute;
             left: 0;
             color: #207daf;
@@ -615,7 +630,7 @@
         <div class="nav-container">
             <a href="#" class="logo">AUTHENTIC GUATEMALA</a>
             <nav>
-                <button class="menu-toggle" id="menuToggle">0</button>
+                <button class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></button>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
@@ -630,7 +645,7 @@
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Transporte Confiable del Aeropuerto</h1>
-            <p>Viaja seguro y cómodo desde el aeropuerto hasta tu destino turístico en Guatemala. Servicio privado disponible 24/7.</p>
+            <p>Viaja seguro y cÃ³modo desde el aeropuerto hasta tu destino turÃ­stico en Guatemala. Servicio privado disponible 24/7.</p>
             <div>
                 <a href="#contacto" class="cta-button">Reservar Ahora</a>
                 <a href="#servicios" class="cta-button secondary">Ver Servicios</a>
@@ -641,39 +656,39 @@
     <!-- Features Section -->
     <section class="features" id="servicios">
         <div class="container">
-            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-            <p class="section-subtitle">Ofrecemos el mejor servicio de transporte privado con atención personalizada y profesional</p>
+            <h2 class="section-title">Â¿Por QuÃ© Elegirnos?</h2>
+            <p class="section-subtitle">Ofrecemos el mejor servicio de transporte privado con atenciÃ³n personalizada y profesional</p>
 
             <div class="features-grid">
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">=—</div>
-                    <h3>Vehículos Modernos</h3>
-                    <p>Flota de vehículos nuevos, cómodos y con aire acondicionado para tu máxima comodidad.</p>
+                    <div class="feature-icon"><i class="bi bi-car-front-fill"></i></div>
+                    <h3>VehÃ­culos Modernos</h3>
+                    <p>Flota de vehÃ­culos nuevos, cÃ³modos y con aire acondicionado para tu mÃ¡xima comodidad.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">=h</div>
+                    <div class="feature-icon"><i class="bi bi-person-badge-fill"></i></div>
                     <h3>Conductores Profesionales</h3>
-                    <p>Personal capacitado, bilingüe y con amplio conocimiento de las rutas turísticas.</p>
+                    <p>Personal capacitado, bilingÃ¼e y con amplio conocimiento de las rutas turÃ­sticas.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">=á</div>
+                    <div class="feature-icon"><i class="bi bi-shield-fill-check"></i></div>
                     <h3>Servicio Seguro</h3>
-                    <p>Tu seguridad es nuestra prioridad. Vehículos asegurados y conductores verificados.</p>
+                    <p>Tu seguridad es nuestra prioridad. VehÃ­culos asegurados y conductores verificados.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">ð</div>
+                    <div class="feature-icon"><i class="bi bi-clock-fill"></i></div>
                     <h3>Puntualidad Garantizada</h3>
-                    <p>Seguimiento de vuelos en tiempo real para asegurar que estemos ahí cuando llegues.</p>
+                    <p>Seguimiento de vuelos en tiempo real para asegurar que estemos ahÃ­ cuando llegues.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">=°</div>
+                    <div class="feature-icon"><i class="bi bi-currency-dollar"></i></div>
                     <h3>Precios Competitivos</h3>
                     <p>Tarifas justas y transparentes sin costos ocultos. Paga lo que acordamos.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">=ñ</div>
-                    <h3>Reserva Fácil</h3>
-                    <p>Sistema de reservación sencillo por WhatsApp, email o teléfono.</p>
+                    <div class="feature-icon"><i class="bi bi-phone-fill"></i></div>
+                    <h3>Reserva FÃ¡cil</h3>
+                    <p>Sistema de reservaciÃ³n sencillo por WhatsApp, email o telÃ©fono.</p>
                 </div>
             </div>
         </div>
@@ -683,11 +698,13 @@
     <section class="destinations" id="destinos">
         <div class="container">
             <h2 class="section-title">Destinos Populares</h2>
-            <p class="section-subtitle">Ofrecemos transporte a los principales destinos turísticos de Guatemala</p>
+            <p class="section-subtitle">Ofrecemos transporte a los principales destinos turÃ­sticos de Guatemala</p>
 
             <div class="destinations-grid">
                 <div class="destination-card">
-                    <div class="destination-image"><Û</div>
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?w=600&q=80');">
+                        <div class="destination-icon"><i class="bi bi-building"></i></div>
+                    </div>
                     <div class="destination-content">
                         <h3>Antigua Guatemala</h3>
                         <p>Ciudad colonial patrimonio de la humanidad. Viaje de 45 minutos desde el aeropuerto.</p>
@@ -695,42 +712,52 @@
                     </div>
                 </div>
                 <div class="destination-card">
-                    <div class="destination-image"><</div>
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80');">
+                        <div class="destination-icon"><i class="bi bi-water"></i></div>
+                    </div>
                     <div class="destination-content">
-                        <h3>Lago de Atitlán</h3>
+                        <h3>Lago de AtitlÃ¡n</h3>
                         <p>Hermoso lago rodeado de volcanes. Transporte directo a Panajachel y otros pueblos.</p>
                         <p class="price">Desde $75 USD</p>
                     </div>
                 </div>
                 <div class="destination-card">
-                    <div class="destination-image"><Ù</div>
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80');">
+                        <div class="destination-icon"><i class="bi bi-buildings-fill"></i></div>
+                    </div>
                     <div class="destination-content">
                         <h3>Ciudad de Guatemala</h3>
-                        <p>Capital del país. Transporte a hoteles en zona 10, 13, 14 y otras áreas.</p>
+                        <p>Capital del paÃ­s. Transporte a hoteles en zona 10, 13, 14 y otras Ã¡reas.</p>
                         <p class="price">Desde $25 USD</p>
                     </div>
                 </div>
                 <div class="destination-card">
-                    <div class="destination-image"><Û</div>
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=600&q=80');">
+                        <div class="destination-icon"><i class="bi bi-Bank2"></i></div>
+                    </div>
                     <div class="destination-content">
                         <h3>Tikal</h3>
-                        <p>Impresionante zona arqueológica Maya. Coordinamos tu vuelo interno y transporte.</p>
+                        <p>Impresionante zona arqueolÃ³gica Maya. Coordinamos tu vuelo interno y transporte.</p>
                         <p class="price">Consultar</p>
                     </div>
                 </div>
                 <div class="destination-card">
-                    <div class="destination-image"><Ö</div>
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80');">
+                        <div class="destination-icon"><i class="bi bi-tsunami"></i></div>
+                    </div>
                     <div class="destination-content">
-                        <h3>Río Dulce</h3>
-                        <p>Paraíso caribeño con selva tropical. Servicio de transporte terrestre completo.</p>
+                        <h3>RÃ­o Dulce</h3>
+                        <p>ParaÃ­so caribeÃ±o con selva tropical. Servicio de transporte terrestre completo.</p>
                         <p class="price">Desde $95 USD</p>
                     </div>
                 </div>
                 <div class="destination-card">
-                    <div class="destination-image"><Ô</div>
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80');">
+                        <div class="destination-icon"><i class="bi bi-shop"></i></div>
+                    </div>
                     <div class="destination-content">
                         <h3>Chichicastenango</h3>
-                        <p>Famoso mercado indígena. Tours los jueves y domingos con transporte incluido.</p>
+                        <p>Famoso mercado indÃ­gena. Tours los jueves y domingos con transporte incluido.</p>
                         <p class="price">Desde $65 USD</p>
                     </div>
                 </div>
@@ -741,18 +768,18 @@
     <!-- Why Us Section -->
     <section class="why-us">
         <div class="why-us-content">
-            <div class="why-us-image"><ì<ù</div>
+            <div class="why-us-image"></div>
             <div>
-                <h2 class="section-title" style="text-align: left;">Experiencia Auténtica</h2>
+                <h2 class="section-title" style="text-align: left;">Experiencia AutÃ©ntica</h2>
                 <p class="section-subtitle" style="text-align: left; margin-left: 0;">Con Authentic Guatemala no solo obtienes transporte, obtienes una experiencia completa</p>
                 <ul class="why-us-list">
-                    <li>Más de 10 años de experiencia en turismo guatemalteco</li>
+                    <li>MÃ¡s de 10 aÃ±os de experiencia en turismo guatemalteco</li>
                     <li>Conductores que conocen la historia y cultura local</li>
                     <li>Recomendaciones personalizadas de restaurantes y lugares</li>
                     <li>Asistencia durante todo tu viaje en Guatemala</li>
-                    <li>Soporte en español e inglés</li>
-                    <li>Conexión con tours y experiencias auténticas</li>
-                    <li>Atención al cliente disponible 24/7</li>
+                    <li>Soporte en espaÃ±ol e inglÃ©s</li>
+                    <li>ConexiÃ³n con tours y experiencias autÃ©nticas</li>
+                    <li>AtenciÃ³n al cliente disponible 24/7</li>
                 </ul>
             </div>
         </div>
@@ -761,12 +788,12 @@
     <!-- Contact Section -->
     <section class="contact" id="contacto">
         <div class="contact-content">
-            <h2 class="section-title">Solicita tu Cotización</h2>
+            <h2 class="section-title">Solicita tu CotizaciÃ³n</h2>
             <p class="section-subtitle">Completa el formulario y te responderemos en menos de 2 horas</p>
 
             <div class="contact-form">
                 <div class="success-message" id="successMessage">
-                    ¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.
+                    Â¡Gracias por tu solicitud! Nos pondremos en contacto contigo pronto.
                 </div>
 
                 <form id="contactForm">
@@ -776,18 +803,18 @@
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Correo Electrónico *</label>
+                            <label for="email">Correo ElectrÃ³nico *</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone">Teléfono / WhatsApp *</label>
+                            <label for="phone">TelÃ©fono / WhatsApp *</label>
                             <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="passengers">Número de Pasajeros</label>
+                            <label for="passengers">NÃºmero de Pasajeros</label>
                             <select id="passengers" name="passengers">
                                 <option value="1">1 pasajero</option>
                                 <option value="2">2 pasajeros</option>
@@ -822,8 +849,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Información Adicional</label>
-                        <textarea id="message" name="message" placeholder="Cuéntanos sobre equipaje especial, necesidades específicas, etc."></textarea>
+                        <label for="message">InformaciÃ³n Adicional</label>
+                        <textarea id="message" name="message" placeholder="CuÃ©ntanos sobre equipaje especial, necesidades especÃ­ficas, etc."></textarea>
                     </div>
 
                     <button type="submit" class="submit-button">Enviar Solicitud</button>
@@ -837,20 +864,20 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Authentic Guatemala</h3>
-                <p>Transportamos tus sueños a través de la belleza de Guatemala. Experiencias auténticas desde 2013.</p>
+                <p>Transportamos tus sueÃ±os a travÃ©s de la belleza de Guatemala. Experiencias autÃ©nticas desde 2013.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook">=Ø</a>
-                    <a href="#" aria-label="Instagram">=÷</a>
-                    <a href="#" aria-label="WhatsApp">=¬</a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 </div>
             </div>
 
             <div class="footer-section">
                 <h3>Contacto</h3>
-                <p>=Þ +502 1234-5678</p>
-                <p>=ç info@authenticguatemala.com</p>
-                <p>=Í Ciudad de Guatemala</p>
-                <p>ð Disponible 24/7</p>
+                <p><i class="bi bi-telephone-fill"></i> +502 1234-5678</p>
+                <p><i class="bi bi-envelope-fill"></i> info@authenticguatemala.com</p>
+                <p><i class="bi bi-geo-alt-fill"></i> Ciudad de Guatemala</p>
+                <p><i class="bi bi-clock-fill"></i> Disponible 24/7</p>
             </div>
 
             <div class="footer-section">
@@ -858,14 +885,14 @@
                 <a href="#servicios">Transporte Aeropuerto</a>
                 <a href="#destinos">Tours Privados</a>
                 <a href="#contacto">Shuttle Compartido</a>
-                <a href="#contacto">Alquiler de Vehículos</a>
+                <a href="#contacto">Alquiler de VehÃ­culos</a>
             </div>
 
             <div class="footer-section">
-                <h3>Enlaces Útiles</h3>
+                <h3>Enlaces Ãštiles</h3>
                 <a href="https://authenticguatemala.com">Sitio Web Principal</a>
-                <a href="#contacto">Política de Cancelación</a>
-                <a href="#contacto">Términos y Condiciones</a>
+                <a href="#contacto">PolÃ­tica de CancelaciÃ³n</a>
+                <a href="#contacto">TÃ©rminos y Condiciones</a>
                 <a href="#contacto">Preguntas Frecuentes</a>
             </div>
         </div>
@@ -876,7 +903,7 @@
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">‘</button>
+    <button class="scroll-top" id="scrollTop"><i class="bi bi-arrow-up"></i></button>
 
     <script>
         // Mobile Menu Toggle
